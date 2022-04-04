@@ -39,6 +39,7 @@ print(ave_temp, "pandas ave temp")
 max_temp = pandas_data["temp"].max()
 print(max_temp, "pandas max temp")
 
+# Map to python data types
 data_to_dict = pandas_data.to_dict()
 print(data_to_dict)
 # Will print the following ->
@@ -55,3 +56,17 @@ print(data_to_dict)
 data_to_list = pandas_data["day"].to_list()
 print(data_to_list, "days")
 # Will print the following -> `['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] days`
+
+# Grab rows
+highest_temp_row = pandas_data[pandas_data["temp"]
+                               == pandas_data["temp"].max()]
+print(highest_temp_row, "pandas row with filter")
+
+# Create Dataframe from scratch
+data_dict = {
+    "students": ["biff", "jeff", "meff"],
+    "scores": [58, 69, 99]
+}
+built_dataframe = pandas.DataFrame(data_dict)
+print(built_dataframe, "pandas built dataframe")
+built_dataframe.to_csv("./new_data.csv")
